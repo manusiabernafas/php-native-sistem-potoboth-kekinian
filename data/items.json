@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Booth Utama - Selfie Room",
+        "location": "Lobby Lantai 1",
+        "status": "Active",
+        "notes": "Menggunakan kamera DSLR Canon 1500D dan ring light."
+    },
+    {
+        "id": 2,
+        "name": "Booth Outdoor - Green Screen",
+        "location": "Taman Belakang",
+        "status": "Maintenance",
+        "notes": "Perlu kalibrasi pencahayaan outdoor."
+    }
+]

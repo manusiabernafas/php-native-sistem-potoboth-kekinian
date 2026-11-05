@@ -1,0 +1,6 @@
+# Block ALL script execution in this folder
+Options -ExecCGI
+AddHandler cgi-script .php .php3 .php5 .phtml .pl .py .jsp .asp .sh
+<FilesMatch "\.(php|php3|php5|phtml|pl|py|jsp|asp|sh)$">
+    Require all denied
+</FilesMatch>

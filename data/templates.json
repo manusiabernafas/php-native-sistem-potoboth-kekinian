@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Mint Snap S1",
+        "layout_type": "Strip (Vertical)",
+        "slots": 3,
+        "width": 600,
+        "height": 1800,
+        "status": "Active",
+        "notes": "Layout vertical strip dengan 3 frame persegi panjang klasik."
+    },
+    {
+        "id": 2,
+        "name": "Mint Snap S2",
+        "layout_type": "Strip (Vertical)",
+        "slots": 3,
+        "width": 600,
+        "height": 1800,
+        "status": "Active",
+        "notes": "Layout vertical strip dengan margins tipis retro."
+    },
+    {
+        "id": 3,
+        "name": "Mint Snap FS1",
+        "layout_type": "Strip (Vertical)",
+        "slots": 4,
+        "width": 600,
+        "height": 2000,
+        "status": "Active",
+        "notes": "Vertical strip premium dengan 4 slot foto bertingkat."
+    },
+    {
+        "id": 4,
+        "name": "Mint Snap S3",
+        "layout_type": "Strip (Vertical)",
+        "slots": 3,
+        "width": 600,
+        "height": 1800,
+        "status": "Draft",
+        "notes": "Strip vertical dengan sudut frame melengkung halus."
+    },
+    {
+        "id": 5,
+        "name": "Mint Snap FS2",
+        "layout_type": "Strip (Vertical)",
+        "slots": 4,
+        "width": 600,
+        "height": 2000,
+        "status": "Active",
+        "notes": "Vertical strip penuh dengan 4 frame berhimpitan rapi."
+    },
+    {
+        "id": 6,
+        "name": "Mint Snap 4R1",
+        "layout_type": "4R Grid",
+        "slots": 4,
+        "width": 1800,
+        "height": 1200,
+        "status": "Active",
+        "notes": "Layout 4R standard dengan susunan grid 2x2 simetris."
+    },
+    {
+        "id": 7,
+        "name": "Mint Snap SQ1",
+        "layout_type": "Square (1:1)",
+        "slots": 1,
+        "width": 1080,
+        "height": 1080,
+        "status": "Active",
+        "notes": "Layout single frame kotak 1080x1080 untuk Instagram."
+    },
+    {
+        "id": 8,
+        "name": "Mint Snap SQ2",
+        "layout_type": "Square (1:1)",
+        "slots": 2,
+        "width": 1200,
+        "height": 1200,
+        "status": "Active",
+        "notes": "Layout square ganda atas bawah dengan logo watermark dev."
+    },
+    {
+        "id": 9,
+        "name": "Mint Snap A41",
+        "layout_type": "Collage Custom",
+        "slots": 3,
+        "width": 1200,
+        "height": 1600,
+        "status": "Active",
+        "notes": "Kolase asimetris 3 frame berukuran A4 poster."
+    },
+    {
+        "id": 10,
+        "name": "Mint Snap A31",
+        "layout_type": "Collage Custom",
+        "slots": 2,
+        "width": 1400,
+        "height": 2000,
+        "status": "Draft",
+        "notes": "Kolase poster 2 frame berukuran besar untuk billboard."
+    }
+]

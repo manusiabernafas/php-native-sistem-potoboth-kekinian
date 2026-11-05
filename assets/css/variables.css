@@ -1,0 +1,61 @@
+/* 
+ * CSS Custom Properties (Design Tokens)
+ * Shifted to a Retro Videogame Pastel Theme (Blue, Green, Yellow)
+ */
+
+:root {
+    /* Videogame Fonts */
+    --font-primary: 'Pixelify Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Light Pastel Theme Color Palette */
+    --bg-primary: #f8fafc;        /* Soft warm light blue-gray background */
+    --bg-secondary: #ffffff;      /* Clean white card background */
+    --bg-tertiary: #f1f5f9;       /* Light gray for select options & hover states */
+    --border-color: #1f2937;      /* Bold 8-bit dark charcoal borders */
+    --border-focus: #0284c7;      /* Pixel blue focus highlight */
+
+    /* Text Colors */
+    --text-primary: #1f2937;      /* High contrast dark gray readable text */
+    --text-secondary: #4b5563;    /* Mid gray text for descriptions */
+    --text-muted: #9ca3af;        /* Light muted gray */
+
+    /* Accent & Brand Colors (Pastel Videogame Theme) */
+    --primary: #0284c7;           /* Sky Blue Accent */
+    --primary-hover: #0369a1;     
+    --primary-glow: rgba(2, 132, 199, 0.15);
+    
+    --success: #16a34a;           /* Pastel Green Accent */
+    --success-bg: #dcfce7;
+    --success-border: #16a34a;
+
+    --danger: #dc2626;            /* Pastel Red Accent */
+    --danger-bg: #fee2e2;
+    --danger-border: #dc2626;
+
+    --warning: #ca8a04;           /* Pastel Yellow Accent */
+    --warning-bg: #fef9c3;
+    --warning-border: #ca8a04;
+
+    --info: #0891b2;              /* Cyan Blue Accent */
+    --info-bg: #ecfeff;
+    --info-border: #0891b2;
+
+    /* Dimensions */
+    --sidebar-width: 260px;
+    
+    /* 8-Bit Pixel Borders (Sharp corners are default for retro games) */
+    --radius-sm: 0px;
+    --radius-md: 0px;
+    --radius-lg: 0px;
+    --radius-xl: 0px;
+    
+    /* 3D solid shadows for pixel-art depth effect */
+    --shadow-sm: 2px 2px 0 0 #1f2937;
+    --shadow-md: 4px 4px 0 0 #1f2937;
+    --shadow-lg: 6px 6px 0 0 #1f2937;
+    --shadow-glow: 0 0 10px rgba(2, 132, 199, 0.3);
+
+    /* Retro videogame transitions (snappy steps instead of linear ease) */
+    --transition-fast: 0.1s steps(2);
+    --transition-normal: 0.2s steps(3);
+}

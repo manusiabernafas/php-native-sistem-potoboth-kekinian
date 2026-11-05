@@ -1,0 +1,541 @@
+/*
+ * Reusable UI Components - Retro 8-Bit Videogame Style
+ * Bold borders, solid flat shadows, and snappy active offsets.
+ */
+
+/* 1. Alert System */
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 3px solid #1f2937;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 3px 3px 0 0 rgba(31, 41, 55, 0.1);
+    animation: alertSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.alert-danger {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.alert-success {
+    background-color: var(--success-bg);
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.alert-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* 2. Button System */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: 3px solid #1f2937;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 0 #1f2937;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color 0.15s ease;
+    position: relative;
+    image-rendering: pixelated;
+}
+
+.btn-primary {
+    background-color: var(--primary); /* Pastel Blue */
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #38bdf8; /* Lighter pastel blue */
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #1f2937;
+}
+
+.btn-primary:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 #1f2937;
+}
+
+.btn-secondary {
+    background-color: var(--warning-bg); /* Pastel Yellow */
+    color: #1f2937;
+    border-color: #1f2937;
+}
+
+.btn-secondary:hover {
+    background-color: #fefcbf;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #1f2937;
+}
+
+.btn-secondary:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 #1f2937;
+}
+
+.btn-danger {
+    background-color: var(--danger-bg); /* Pastel Red */
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background-color: var(--danger);
+    color: #ffffff;
+    border-color: #1f2937;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 #1f2937;
+}
+
+.btn-danger:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 0 #1f2937;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* 3. Form & Input Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    background-color: #ffffff;
+    border: 3px solid #1f2937;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: inset 3px 3px 0 0 #f1f5f9;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color 0.15s ease;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #f0f9ff;
+    box-shadow: 4px 4px 0 0 #1f2937;
+    transform: translate(-3px, -3px);
+}
+
+/* Generic form fields */
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 3px solid #1f2937;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: inset 3px 3px 0 0 #f1f5f9;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color 0.15s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #f0f9ff;
+    box-shadow: 4px 4px 0 0 #1f2937;
+    transform: translate(-3px, -3px);
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231f2937' stroke-width='3'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* 4. Table Style */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th {
+    padding: 14px 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-bottom: 3px solid #1f2937;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: #f8fafc;
+}
+
+.data-table td {
+    padding: 16px 20px;
+    border-bottom: 2px solid #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.data-table tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid #1f2937;
+    border-radius: var(--radius-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 2px 2px 0 0 rgba(31, 41, 55, 0.1);
+}
+
+.status-active {
+    background-color: var(--success-bg);
+    color: #16a34a;
+    border-color: #16a34a;
+}
+
+.status-maintenance {
+    background-color: var(--warning-bg);
+    color: #b45309;
+    border-color: #b45309;
+}
+
+.status-offline {
+    background-color: var(--danger-bg);
+    color: #dc2626;
+    border-color: #dc2626;
+}
+
+/* Action Buttons in Grid/Table */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2.5px solid #1f2937;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-shadow: 2px 2px 0 0 #1f2937;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+    background-color: #ffffff;
+    color: var(--text-primary);
+}
+
+.btn-action:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 0 #1f2937;
+}
+
+.btn-action:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 0 #1f2937;
+}
+
+.btn-edit:hover {
+    background-color: var(--primary-glow);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-delete:hover {
+    background-color: var(--danger-bg);
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+/* 5. Modal Overlay and Card */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 41, 55, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-card {
+    background-color: #ffffff;
+    border: 4px solid #1f2937;
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 8px 8px 0 0 rgba(31, 41, 55, 0.2);
+    transform: scale(0.92) translateY(15px);
+    transition: transform var(--transition-normal);
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-card::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 2px dashed #cbd5e1;
+    pointer-events: none;
+}
+
+.modal-overlay.open .modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 3px solid #1f2937;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.btn-close-modal {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close-modal:hover {
+    opacity: 1;
+}
+
+.modal-form {
+    padding: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Keyframes */
+@keyframes alertSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- SweetAlert2 Retro 8-Bit Custom Theme --- */
+.swal2-popup {
+    border: 4px solid #1f2937 !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 8px 8px 0 0 rgba(31, 41, 55, 0.2) !important;
+    font-family: var(--font-primary) !important;
+    padding: 30px 24px !important;
+    position: relative !important;
+}
+
+.swal2-popup::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 4px !important;
+    left: 4px !important;
+    right: 4px !important;
+    bottom: 4px !important;
+    border: 2px dashed #cbd5e1 !important;
+    pointer-events: none !important;
+    z-index: 10 !important;
+}
+
+.swal2-title {
+    font-family: var(--font-primary) !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    font-size: 1.5rem !important;
+    margin-top: 10px !important;
+    text-transform: uppercase !important;
+}
+
+.swal2-html-container {
+    font-family: var(--font-primary) !important;
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+}
+
+/* SweetAlert2 Buttons Custom retro style */
+.swal2-actions {
+    gap: 12px !important;
+    margin-top: 24px !important;
+    z-index: 11 !important;
+}
+
+.swal2-styled {
+    font-family: var(--font-primary) !important;
+    font-weight: 700 !important;
+    border: 3px solid #1f2937 !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 4px 4px 0 0 #1f2937 !important;
+    padding: 12px 24px !important;
+    font-size: 0.9rem !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+    cursor: pointer !important;
+}
+
+.swal2-styled:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: 6px 6px 0 0 #1f2937 !important;
+}
+
+.swal2-styled:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: 0 0 0 0 #1f2937 !important;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+}
+
+.swal2-styled.swal2-confirm:hover {
+    background-color: #38bdf8 !important;
+}
+
+.swal2-styled.swal2-cancel {
+    background-color: var(--warning-bg) !important;
+    color: #1f2937 !important;
+}
+
+.swal2-styled.swal2-cancel:hover {
+    background-color: #fefcbf !important;
+}
+
+/* SweetAlert2 Icon overrides */
+.swal2-icon {
+    border: 3px solid #1f2937 !important;
+    box-shadow: 3px 3px 0 0 rgba(31, 41, 55, 0.1) !important;
+    margin: 10px auto 20px auto !important;
+}
+
+.swal2-icon.swal2-success {
+    border-color: var(--success) !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 4px solid rgba(22, 163, 74, 0.2) !important;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: var(--success) !important;
+}
+
+.swal2-icon.swal2-error {
+    border-color: var(--danger) !important;
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+    background-color: var(--danger) !important;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: var(--warning) !important;
+    color: var(--warning) !important;
+}
+

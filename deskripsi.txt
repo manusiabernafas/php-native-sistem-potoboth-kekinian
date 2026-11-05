@@ -1,0 +1,32 @@
+Mobooth Admin adalah sistem manajemen photobooth digital untuk unit booth foto event/sewa, dibangun dengan PHP native (arsitektur MVC tanpa framework), MySQL, dan Bootstrap 5 tanpa framework berat, ringan dijalankan di localhost sekalipun dengan spesifikasi laptop standar.
+Cara kerja
+Pengunjung membuka halaman utama dan melihat daftar booth yang sedang aktif beserta lokasinya, lalu bisa masuk ke halaman Playground untuk mencoba photobooth langsung di browser menggunakan salah satu template frame yang tersedia (strip vertikal, grid 4R, dokumen A4, hingga kartu bertema Pokemon). Admin login ke dashboard terpusat untuk mengelola data booth (nama, lokasi, status, catatan), memantau data pengunjung yang login (Google/Guest), serta mendesain template frame lewat editor drag-and-drop yang menyimpan koordinat slot foto dalam format JSON per template. Modul donasi terhubung ke Saweria/Bagibagi.co dan QRIS/transfer bank, dengan endpoint webhook untuk mencatat donasi masuk secara real-time, lengkap dengan mode simulasi untuk testing tanpa transaksi asli.
+Fitur
+Halaman publik: beranda dengan daftar booth aktif, About, Contact, dan Donate
+Web Photobooth Playground — photobooth interaktif langsung di browser tanpa install aplikasi
+Editor template drag-and-drop dengan multi-layout (Strip Vertical, 4R Grid, A4 Document, Kartu Pokemon) dan penyimpanan koordinat frame per slot foto
+Upload gambar latar/frame template dengan validasi MIME asli (bukan sekadar ekstensi) dan batas ukuran file
+Manajemen data booth (CRUD): nama, lokasi, status (Active/Maintenance), catatan
+Pencatatan data pengunjung (nama, email, tipe login Google/Guest)
+Modul donasi: konfigurasi link Saweria & Bagibagi.co, rekening bank, upload QRIS
+Webhook penerima notifikasi donasi live dari platform pihak ketiga
+Simulasi donasi untuk keperluan demo/testing
+Login admin dengan hash password (bcrypt), regenerasi session ID saat login, dan auto-logout setelah 15 menit tidak aktif
+Ubah password admin lewat halaman profil
+Keamanan: proteksi CSRF di semua form POST, prepared statement (PDO) anti SQL injection, validasi upload berbasis MIME real
+Panduan instalasi
+Extract folder mobooth ke htdocs (XAMPP) atau www (Laragon)
+Buat database dan import skema
+mysql -u root -e "CREATE DATABASE mobooth_db"
+mysql -u root mobooth_db < mobooth_db.sql
+Sesuaikan koneksi database (jika perlu)
+# edit config/config.php jika user/password MySQL berbeda dari default XAMPP (root, tanpa password)
+# nilai default sudah: DB_HOST=localhost, DB_NAME=mobooth_db, DB_USER=root, DB_PASS=''
+Set password admin (dump contoh berisi hash bcrypt, bukan password polos)
+php -r "echo password_hash('PasswordBaruAnda', PASSWORD_DEFAULT);"
+# lalu jalankan di MySQL/phpMyAdmin:
+# UPDATE users SET password='<hasil hash di atas>' WHERE username='admin';
+Jalankan aplikasi
+# pastikan Apache & MySQL aktif di XAMPP/Laragon, lalu buka:
+http://localhost/mobooth/
+Login: username admin, password sesuai yang di-set di langkah 4.
